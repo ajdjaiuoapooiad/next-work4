@@ -1,14 +1,9 @@
 'use client'
-import { Post } from '@/app/types/type'
 import React from 'react'
 import JobCard from './JobCard'
 import { useSearchParams } from 'next/navigation'
 import { useQuery } from "@tanstack/react-query"
 import { getAllJobsAction } from '@/utils/actions'
-
-// interface CardListProps {
-//   posts: Post[] 
-// }
 
 const JobsList = () => {
   const searchParams = useSearchParams()

@@ -1,4 +1,4 @@
-import { Post } from '@/app/types/type'
+
 import { JobType } from '@/utils/types'
 import React from 'react'
 
