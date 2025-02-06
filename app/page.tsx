@@ -8,17 +8,9 @@ import { getAllJobsAction } from '@/utils/actions'
 
 
 
-// export async function getData() {
-//   const res = await fetch('http://localhost:3000/api/v1', {
-//     cache: 'no-store',
-//   })
-//   const data: Post[] = await res.json()
-//   console.log(data);
-//   return data;
-// }
+
 
 const Home = async () => {  
-  // const posts = await getData();
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery({
     queryKey: ['', '','all','all'],
