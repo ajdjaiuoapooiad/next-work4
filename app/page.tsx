@@ -1,7 +1,6 @@
 
 import JobsList from '@/components/JobsList'
 import React from 'react'
-import { Post } from './types/type'
 import SearchForm from '@/components/SearchForm'
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import { getAllJobsAction } from '@/utils/actions'
