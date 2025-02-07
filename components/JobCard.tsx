@@ -4,12 +4,6 @@ import React from 'react'
 
 
 
-
-// interface CardProps {
-//   post: Post 
-// }
-
-
 const JobCard = ({job}: {job: JobType}) => {
   const {id, title, category, income} = job
 

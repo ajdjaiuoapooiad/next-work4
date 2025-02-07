@@ -26,7 +26,7 @@ export const post = async ({title, category, income}: z.infer<typeof formSchema>
 type GetAllJobsActionType = {
     search?: string;
     jobStatus?: string;
-    jobIncome?: string;
+    jobIncome?: number;
 }
 
 export async function getAllJobsAction({

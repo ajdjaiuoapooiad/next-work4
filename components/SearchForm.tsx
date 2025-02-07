@@ -31,7 +31,7 @@ const SearchForm = () => {
     const formData = new FormData(e.currentTarget)
     const search = formData.get('search') as string
     const jobStatus = formData.get('jobStatus') as string
-    const jobIncome = formData.get('jobIncome') as string
+    const jobIncome = formData.get('jobIncome') as number;
     params.set('search', search)
     params.set('jobStatus', jobStatus)
     params.set('jobIncome', jobIncome)
