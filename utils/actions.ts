@@ -32,7 +32,6 @@ type GetAllJobsActionType = {
 export async function getAllJobsAction({
     search,
     jobStatus,
-    jobIncome,
 }: GetAllJobsActionType): Promise<{
     jobs: JobType[];
     count: number;

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select"
 import { Button } from './ui/button'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { JobIncome, JobStatus } from '@/utils/types'
+import {  JobStatus } from '@/utils/types'
 
 
 
