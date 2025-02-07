@@ -86,7 +86,7 @@ const SearchForm = () => {
 
         
         
-        <Button type='submit'>検索</Button>
+        <Button className='bg-gray-500 hover:bg-gray-600' type='submit'>検索</Button>
       </form>
     </div>
   )
