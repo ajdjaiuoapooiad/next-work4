@@ -17,7 +17,7 @@ export const formSchema = z.object({
   category: z.string().min(2, {
     message: "Category must be at least 2 characters.",
   }),
-  income: z.string().min(2, {
+  income: z.coerce.number().min(2, {
     message: "Income must be at least 2 characters.",
   }),
 })
@@ -29,7 +29,7 @@ const CreatePage =  () => {
     defaultValues: {
       title: '',
       category: '',
-      income: '',
+      income: null,
     }
   })
 
@@ -88,7 +88,7 @@ const CreatePage =  () => {
               </FormItem>
             )}
           />
-          <Button type="submit" >投稿</Button>
+          <Button type="submit"  className='bg-gray-500 hover:bg-gray-600'>投稿</Button>
         </form>
       </Form>
     </div>

@@ -64,13 +64,6 @@ export async function getAllJobsAction({
                 category: jobStatus,
             }
         }
-        if(jobIncome && jobIncome !== 'all'){
-          whereClause = {
-              ...whereClause,
-              income: jobIncome,
-          }
-      }
-
         const jobs: JobType[] = await prisma.post.findMany({
             where: whereClause,
             orderBy: {
