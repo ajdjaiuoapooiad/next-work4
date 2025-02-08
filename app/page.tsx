@@ -1,6 +1,6 @@
 
 import JobsList from '@/components/JobsList'
-import React from 'react'
+import React, { Suspense } from 'react'
 import SearchForm from '@/components/SearchForm'
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import { getAllJobsAction } from '@/utils/actions'
@@ -24,7 +24,9 @@ const Home = async () => {
       <div className='grid grid-cols-4 '>
         <div className='h-800 bg-gray-300 '>
           <div className='col-span-1'>
-           <SearchForm />
+            <Suspense>
+              <SearchForm />
+            </Suspense>
           </div>
         </div>
 
