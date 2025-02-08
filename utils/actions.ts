@@ -5,18 +5,15 @@ import prisma from "./db"
 
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import { JobType } from "./types"
-import { Prisma } from "@prisma/client"
-import { formSchema } from "@/app/create-post/page"
-
- 
+import { createFormType, JobType } from "./types"
+import { Prisma } from "@prisma/client" 
 
 
 export const post = async ({
   title, 
   category, 
   income
-}: z.infer<typeof formSchema>) => {
+}: createFormType) => {
     await prisma.post.create({
         data: {
             title,

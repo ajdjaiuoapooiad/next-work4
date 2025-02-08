@@ -1,4 +1,4 @@
-
+import * as z from 'zod';
 
 
 export type JobType = {
@@ -7,7 +7,6 @@ export type JobType = {
   category: string;
   income: number;
   createdAt: Date;
- 
 };
 
 export enum JobStatus {
@@ -41,4 +40,15 @@ export enum JobMode {
   PartTime = 'part-time',
   Internship = 'internship',
 }
+
+
+export const createFormSchema = z.object({
+  title: z
+    .string(),
+  category: z
+    .string(),
+  income: z
+    .coerce.number(),
+});
+export type  createFormType = z.infer<typeof createFormSchema>;
 

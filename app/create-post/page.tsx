@@ -7,21 +7,11 @@ import { post } from '@/utils/actions'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-
-export const formSchema = z.object({
-  title: z
-    .string(),
-  category: z
-    .string(),
-  income: z
-    .coerce.number(),
-});
-
+import { createFormSchema, createFormType } from '@/utils/types'
 
 const CreatePage =  () => {
   const form = useForm({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(createFormSchema),
     defaultValues: {
       title: '',
       category: '',
@@ -29,7 +19,7 @@ const CreatePage =  () => {
     }
   })
 
-  async function onSubmit(value: z.infer<typeof formSchema>){
+  async function onSubmit(value: createFormType){
     const { title, category, income } = value
     post({ title, category, income })
   }
