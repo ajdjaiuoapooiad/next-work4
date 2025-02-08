@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
@@ -22,7 +22,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        {children}
+        <Suspense>{children}</Suspense>
       </QueryClientProvider>
     </>
 

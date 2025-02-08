@@ -19,27 +19,25 @@ const Home = async () => {
 
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
+    <>
+      <HydrationBoundary state={dehydrate(queryClient)}>
 
-      <div className='grid grid-cols-4 '>
-        <div className='h-800 bg-gray-300 '>
-          <div className='col-span-1'>
-            <Suspense>
-              <SearchForm />
-            </Suspense>
+        <div className='grid grid-cols-4 '>
+          <div className='h-800 bg-gray-300 '>
+            <div className='col-span-1'>
+              <Suspense>
+                <SearchForm />
+              </Suspense>
+            </div>
+          </div>
+
+          <div className='col-span-3 '>
+              <JobsList />  
           </div>
         </div>
 
-        <div className='col-span-3 '>
-            <JobsList />  
-        </div>
-      </div>
-
-    </HydrationBoundary>
-
-
-    
-
+      </HydrationBoundary>
+    </>
   )
 }
 
