@@ -2,16 +2,21 @@
 
 import { z } from "zod"
 import prisma from "./db"
-import { formSchema } from "@/app/create-post/page"
+
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 import { JobType } from "./types"
 import { Prisma } from "@prisma/client"
+import { formSchema } from "@/app/create-post/page"
 
  
 
 
-export const post = async ({title, category, income}: z.infer<typeof formSchema>) => {
+export const post = async ({
+  title, 
+  category, 
+  income
+}: z.infer<typeof formSchema>) => {
     await prisma.post.create({
         data: {
             title,

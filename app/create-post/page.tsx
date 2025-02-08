@@ -4,32 +4,28 @@ import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { post } from '@/utils/actions'
-import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
+
 import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-
 export const formSchema = z.object({
-  title: z.string().min(2, {
-    message: "Title must be at least 2 characters.",
-  }),
-  category: z.string().min(2, {
-    message: "Category must be at least 2 characters.",
-  }),
-  income: z.coerce.number().min(2, {
-    message: "Income must be at least 2 characters.",
-  }),
-})
+  title: z
+    .string(),
+  category: z
+    .string(),
+  income: z
+    .coerce.number(),
+});
 
 
 const CreatePage =  () => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: '',
       category: '',
-      income: null,
+      income: 0,
     }
   })
 
