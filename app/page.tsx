@@ -25,9 +25,9 @@ const Home = async () => {
         <div className='grid grid-cols-4 '>
           <div className='h-1200 h-screen bg-gray-300 '>
             <div className='col-span-1'>
-              <Suspense>
+              
                 <SearchForm />
-              </Suspense>
+      
             </div>
           </div>
 
