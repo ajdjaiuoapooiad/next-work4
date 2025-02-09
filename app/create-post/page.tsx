@@ -37,9 +37,9 @@ const CreatePage =  () => {
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Title</FormLabel>
+                <FormLabel>タイトル</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Title" {...field} />
                 </FormControl>
                 
                 <FormMessage />
@@ -51,9 +51,9 @@ const CreatePage =  () => {
             name="category"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Category</FormLabel>
+                <FormLabel>カテゴリ</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Category" {...field} />
                 </FormControl>
                 
                 <FormMessage />
@@ -65,9 +65,9 @@ const CreatePage =  () => {
             name="income"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Income</FormLabel>
+                <FormLabel>年収（万円）</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="Income" {...field} />
                 </FormControl>
                 
                 <FormMessage />

@@ -23,7 +23,7 @@ const Home = async () => {
       <HydrationBoundary state={dehydrate(queryClient)}>
 
         <div className='grid grid-cols-4 '>
-          <div className='h-1200 h-screen bg-gray-300 '>
+          <div className='h-1200 bg-gray-300 '>
             <div className='col-span-1'>
               
                 <SearchForm />
