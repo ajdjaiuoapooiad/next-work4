@@ -31,7 +31,7 @@ const SearchForm = () => {
     const formData = new FormData(e.currentTarget)
     const search = formData.get('search') as string
     const jobStatus = formData.get('jobStatus') as string
-    const jobIncomes = String(formData.get('jobIncomes')) as string
+    const jobIncomes = String(formData.get('jobIncomes'))
 
     params.set('search', search)
     params.set('jobStatus', jobStatus)
@@ -79,7 +79,7 @@ const SearchForm = () => {
             {['all', ...Object.values(incomes)].map((income) => {
               return (
 
-                <SelectItem className='bg-gray-100 hover:bg-gray-200' value={income} key={income} >{income}</SelectItem>
+                <SelectItem className='bg-gray-100 hover:bg-gray-200' value={String(income)} key={income} >{income}</SelectItem>
               )
             })}
             
