@@ -9,12 +9,12 @@ const JobsList = () => {
   const searchParams = useSearchParams()
   const search = searchParams.get('search') || '';
   const jobStatus = searchParams.get('jobStatus') || 'all';
- 
+  const jobIncomes: number = Number(searchParams.get('jobIncomes'));
 
   
   const {data, isPending} = useQuery({
-    queryKey: ['' ,search ?? '', jobStatus ],
-    queryFn: () => getAllJobsAction({search, jobStatus}),
+    queryKey: ['' ,search ?? '', jobStatus, jobIncomes ],
+    queryFn: () => getAllJobsAction({search, jobStatus, jobIncomes}),
   })
   const jobs = data?.jobs || [];
 

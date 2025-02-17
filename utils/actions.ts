@@ -28,12 +28,13 @@ export const post = async ({
 type GetAllJobsActionType = {
     search?: string;
     jobStatus?: string;
-    jobIncome?: number;
+    jobIncomes?: number;
 }
 
 export async function getAllJobsAction({
     search,
     jobStatus,
+    jobIncomes,
 }: GetAllJobsActionType): Promise<{
     jobs: JobType[];
     count: number;
@@ -65,6 +66,12 @@ export async function getAllJobsAction({
                 category: jobStatus,
             }
         }
+        if(jobIncomes){
+          whereClause = {
+              ...whereClause,
+              income: jobIncomes,
+          }
+      }
         const jobs: JobType[] = await prisma.post.findMany({
             where: whereClause,
             orderBy: {

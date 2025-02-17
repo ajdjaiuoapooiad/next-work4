@@ -24,14 +24,14 @@ export enum JobStatus {
 }
 
 export enum JobIncome {
-  item1 = 200,
-  item2 = 300,
-  item3 = 400,
-  item4 = 500,
-  item5 = 600,
-  item6 = 700,
-  item7 = 800,
-  item8 =  900,
+  num = 200,
+  num2 = 300,
+  num3 = 400,
+  num4 = 500,
+  num5 = 600,
+  num6 = 700,
+  num7 = 800,
+  num8 =  900,
 
 }
 

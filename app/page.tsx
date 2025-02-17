@@ -13,7 +13,7 @@ import { getAllJobsAction } from '@/utils/actions'
 const Home = async () => {  
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery({
-    queryKey: ['', '','all'],
+    queryKey: ['', '','all','all'],
     queryFn: () => getAllJobsAction({}),
   })
 
